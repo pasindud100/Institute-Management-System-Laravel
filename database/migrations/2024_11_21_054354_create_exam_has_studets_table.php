@@ -4,16 +4,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('subjects', function (Blueprint $table) {
-            $table->id('sub_id');
-            $table->string('sub_name', 45);
-            $table->string('credit_hours', 45);
+        Schema::create('exam_has_students', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('exam_id')->constrained('exams', 'exam_id');
+            $table->foreignId('stu_id')->constrained('students', 'stu_id');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('subjects');
+        Schema::dropIfExists('exam_has_studets');
     }
 };

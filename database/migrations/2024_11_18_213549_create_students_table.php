@@ -11,15 +11,14 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->id('stu_id');
+            $table->id('stu_id'); //automaticcly set primary key as stu_id with id() method..if not provide para it take  is as primary key.. it not redable when conneeect with more table
             $table->string('first_name', 45);
             $table->string('last_name', 45);
             $table->date('dob');
             $table->string('gender', 45);
-            $table->integer('contact_number');
+            $table->string('contact_number');
             $table->string('email', 45);
             $table->string('address', 50);
-            $table->primary('stu_id');
         });
     }
 

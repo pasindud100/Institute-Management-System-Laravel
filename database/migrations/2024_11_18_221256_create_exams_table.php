@@ -14,8 +14,7 @@ return new class extends Migration {
             $table->id('exam_id');
             $table->string('exam_name', 45);
             $table->date('exam_date');
-            $table->string('total_marks', 45);
-            $table->primary('exam_id');
+            $table->timestamps();
         });
     }
 

@@ -10,11 +10,12 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('subjects', function (Blueprint $table) {
-            $table->id('sub_id');
-            $table->string('sub_name', 45);
-            $table->string('credit_hours', 45);
-            $table->timestamps();
+        Schema::create('results', function (Blueprint $table) {
+            $table->id('result_id');
+            $table->string('grade', 45);
+            $table->string('mark_obtained', 45);
+           
+            $table->foreignId('exam_exam_id')->constrained('exams', 'exam_id');
         });
     }
 
@@ -23,6 +24,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('subjects');
+        Schema::dropIfExists('results');
     }
 };
