@@ -1,4 +1,5 @@
 @extends('app')
+@include('includes.header')
 
 @section('content')
 <h1>Edit Student</h1>

@@ -18,7 +18,7 @@ class AuthController extends Controller
     function logout()
     {
         Auth::logout();
-        return redirect("login");
+        return redirect(route('login'));
     }
 
     function loginPost(Request $request)
@@ -29,7 +29,7 @@ class AuthController extends Controller
         ]);
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended(route('institutes.index'))
+            return redirect()->intended(route('home'))
                 ->with("success", "You have been login successfully");
 
         }

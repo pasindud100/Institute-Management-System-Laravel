@@ -1,5 +1,5 @@
 @extends('app')
-
+@include('includes.header')
 @section('content')
 <div class="container mt-5">
     <h2>Manage Results for Exam: {{ $exam->exam_name }}</h2>

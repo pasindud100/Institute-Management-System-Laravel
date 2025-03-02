@@ -12,14 +12,11 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 
-Route::get("/", function () {
-    return view(view: 'welcome');
-});
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
 
-Route::get('/', [InstituteController::class, "index"])
-    ->name("institutes.index");
-
-Route::get("login", [AuthController::class, "login"])
+Route::get("/", [AuthController::class, "login"])
     ->name("login");
 
 Route::get("logout", [AuthController::class, "logout"])
