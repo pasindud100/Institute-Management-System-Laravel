@@ -7,26 +7,20 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    //Display a listing of the resource.
     public function index()
     {
         $students = Student::paginate(10);
         return view('students.index', compact('students'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    //Show the form for creating a new resource.
     public function create()
     {
         return view('students.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // Store a newly created resource in storage.
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -45,47 +39,39 @@ class StudentController extends Controller
             ->with('success', 'Student created successfully!');
     }
 
-    /**
-     * Display the specified resource.
-     */
+    // Display the specified resource.
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    //Show the form for editing the specified resource.
     public function edit(Student $student)
     {
-        return view('students.edit',compact('student'));
+        return view('students.edit', compact('student'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    //Update the specified resource in storage.
     public function update(Request $request, Student $student)
     {
         $validated = $request->validate([
-            'first_name'=> 'required|string|max:255',
-            'last_name'=> 'required|string|max:255',
-            'dob'=> 'required|date',
-            'gender'=> 'required|in:Male,Female,Other',
-            'contact_number'=> 'required|string|max:15',
-            'email'=> 'required|email',
-            'address'=>'required|string',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'dob' => 'required|date',
+            'gender' => 'required|in:Male,Female,Other',
+            'contact_number' => 'required|string|max:15',
+            'email' => 'required|email',
+            'address' => 'required|string',
         ]);
 
         $student->update($validated);
-        return redirect()->route('students.index')->with('success','Student updated Successfully..');
+        return redirect()->route('students.index')->with('success', 'Student updated Successfully..');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    // Remove the specified resource from storage.
     public function destroy(Student $student)
     {
         $student->delete();
-        return redirect()->route('students.index')->with('success','Student deleted successfully..');
+        return redirect()->route('students.index')->with('success', 'Student deleted successfully..');
     }
 }

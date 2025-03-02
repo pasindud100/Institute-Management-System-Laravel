@@ -10,18 +10,15 @@ use Redirect;
 
 class ExamStudentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // Display a listing of the resource.
     public function index($exam_id)
     {
-        $exam  = Exam::find($exam_id);
+        $exam = Exam::find($exam_id);
         $assignedStudents = $exam->students;
-        $avilableStudents = Student::whereNotIn('stu_id',$assignedStudents->pluck('stu_id'))->get();
+        $avilableStudents = Student::whereNotIn('stu_id', $assignedStudents->pluck('stu_id'))->get();
 
-        return view('exam_students.index', compact('exam','assignedStudents','avilableStudents'));
+        return view('exam_students.index', compact('exam', 'assignedStudents', 'avilableStudents'));
     }
-
 
     public function addStudent(Request $request, $examid)
     {
@@ -43,13 +40,9 @@ class ExamStudentController extends Controller
             );
     }
 
-
-
     public function removeStudent($examid, $studentId)
     {
         exam_has_studet::where('exam_id', $examid)->where('stu_id', $studentId)->delete();
-        return redirect()->route('exam_students.index',$examid)->with('success','Student removed successfully');
+        return redirect()->route('exam_students.index', $examid)->with('success', 'Student removed successfully');
     }
-    
-    
 }

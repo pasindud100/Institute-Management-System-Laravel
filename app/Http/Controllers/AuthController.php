@@ -15,12 +15,6 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    function logout()
-    {
-        Auth::logout();
-        return redirect(route('login'));
-    }
-
     function loginPost(Request $request)
     {
         $request->validate([
@@ -31,9 +25,14 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->intended(route('home'))
                 ->with("success", "You have been login successfully");
-
         }
         return redirect(route('login'))->with("erorr", "Invalid email or password");
+    }
+
+    function logout()
+    {
+        Auth::logout();
+        return redirect(route('login'));
     }
 
     function register()

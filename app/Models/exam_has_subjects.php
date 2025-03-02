@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -20,7 +19,7 @@ class exam_has_subjects extends Model
 
         public function exam(){
             return $this->belongsTo(Exam::class,'exam_id');
-            }
+     }
 }
 
     

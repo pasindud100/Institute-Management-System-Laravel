@@ -51,9 +51,7 @@ class ExamResultController extends Controller
             ->with('success', 'Result saved successfully!');
     }
 
-    /**
-     * Helper function to calculate grade based on marks.
-     */
+     //Helper function to calculate grade based on marks
     private function calculateGrade($mark)
     {
         if ($mark < 35) {

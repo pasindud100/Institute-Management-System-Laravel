@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ExamSubjectController extends Controller
 {
-    public function index($examId)
+     public function index($examId)
     {
         $exam = Exam::find($examId);
 
@@ -26,7 +26,6 @@ class ExamSubjectController extends Controller
                 'availableSubjects'
             )
         );
-
     }
 
     public function addSubject(Request $request, $examId)
@@ -55,6 +54,4 @@ class ExamSubjectController extends Controller
         return redirect()->route('exam_subjects.index', $examId)
             ->with('success', 'Subject removed successfully');
     }
-
-
 }

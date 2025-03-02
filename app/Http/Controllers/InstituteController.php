@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class InstituteController extends Controller
 {
-    // Display a list of institutes
+    // Display a list of institute
     public function index()
     {
         $institutes = Institute::all();

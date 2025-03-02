@@ -2,7 +2,6 @@
 
 @section('style')
     <style>
-        html,
         body {
             height: 100%;
             background-color: #f8f9fa;
@@ -12,9 +11,7 @@
         }
 
         .form-signin {
-            width: 100%;
             padding: 30px 80px;
-
             background: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -57,7 +54,6 @@
             <div class="text-center">
                 <h1 class="h4 mb-3 fw-bold">Sign in</h1>
             </div>
-
             <div class="form-floating mb-3">
                 <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
                     id="floatingInput" placeholder="name@example.com">
