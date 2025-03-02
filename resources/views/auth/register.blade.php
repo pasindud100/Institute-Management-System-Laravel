@@ -55,9 +55,7 @@
         <form method="POST" action="{{ route('register.post') }}">
             @csrf
             <div class="text-center">
-                <img class="mb-3 rounded-circle" src="{{ asset('assets/img/login.jpeg') }}" alt="" width="100"
-                    height="80" />
-                <h1 class="h4 mb-3 fw-bold">Sign Up</h1>
+                <h1 class="h2 mb-4 fw-bold">Sign Up</h1>
             </div>
 
             <div class="form-floating mb-3">
@@ -97,7 +95,8 @@
             <button class="btn btn-primary w-100 py-2" type="submit">Sign Up</button>
 
             <div class="text-center mt-3">
-                <p> Already have an account? <a href="{{ route('login') }}" class="text-decoration-none text-muted">Sign in</a>
+                <p> Already have an account? <a href="{{ route('login') }}" class="text-decoration-none text-muted">Sign
+                        in</a>
                 </p>
             </div>
         </form>

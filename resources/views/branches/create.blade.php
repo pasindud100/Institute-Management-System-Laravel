@@ -2,9 +2,9 @@
 @include('includes.header')
 
 @section('content')
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center mb-3">
         <h1>Branch</h1>
-        <a href="{{ route('branches.create') }}" class="btn btn-primary">Add New Branch</a>
+        <a href="{{ route('branches.create') }}" class="btn btn-success">Add New Branch</a>
     </div>
 
     <form action="{{ route('branches.store') }}" method="POST">

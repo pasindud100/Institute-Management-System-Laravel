@@ -52,7 +52,7 @@
         <form method="POST" action="{{ route('login.post') }}">
             @csrf
             <div class="text-center">
-                <h1 class="h4 mb-3 fw-bold">Sign in</h1>
+                <h1 class="h2 mb-4 fw-bold">Sign in</h1>
             </div>
             <div class="form-floating mb-3">
                 <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"

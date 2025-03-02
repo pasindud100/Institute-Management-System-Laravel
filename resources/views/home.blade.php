@@ -1,11 +1,12 @@
 @extends('app')
 
 @include('includes.header')
+
 @section('content')
     <div class="container" style="margin-top: 100px">
         {{-- welcome msg --}}
         <div class="text-center mb-5">
-            <h1 class="fw-bold text-primary">Welcome to the SILPI Institute Admin Panel</h1>
+            <h1 class="fw-bold text-primary">Welcome to the SVD Institutes Admin Panel</h1>
             <p class="fs-5 text-secondary">Manage students, courses, exams, and more with ease.</p>
         </div>
 
@@ -39,9 +40,11 @@
         </div>
 
         <div class="text-center my-5">
-            <h3 class="fw-bold text-dark">Start Managing the SILPI Institute Today!</h3>
+            <h3 class="fw-bold text-dark">Start Managing the SVD Instituts Today!</h3>
             <p class="fs-5 text-muted">Keep track of students, courses, and exams effortlessly.</p>
         </div>
     </div>
-    @include('includes.footerForHome')
+    <div>
+        @include('includes.footerForHome')
+    </div>
 @endsection
